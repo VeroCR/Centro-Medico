@@ -1,0 +1,303 @@
+@charset "UTF-8";
+
+/* Aquí definimos las Custom properties */
+:root {
+  --negro: #393939;
+  /* Tipografía */
+  --tipo-principal: Helvetica, Arial, sans-serif;
+  --tipo-secundaria: Verdana;
+}
+
+/* Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+  }
+}
+
+/* Reseteamos los margin y paddings de todas las etiquetas */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* Configuramos el texto que seleccionamos */
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+}
+
+/* Reseteamos las tablas */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-principal);
+  color: var(--negro);
+  line-height: 1.4em;
+}
+
+/*Código nuevo*/
+
+.header{
+    width: 100%;
+    padding: 1em;
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+
+.header .ul{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header .li{
+    margin: 0 .5em;
+    color: rgb(24, 20, 20);
+    padding:2px 7px 2px 7px;
+}
+
+.header .li:hover{
+    background:rgba(109, 109, 109, 0.432);
+    font-size: 1.05em;
+}
+
+.titulo{
+  display:flex;
+  width: 100%;
+  font-family:'Franklin Gothic Medium';
+  justify-content: center;
+  text-align: center;
+  font-size: 2em;
+  color: black;
+  line-height: 1em;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.contenedor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: black;
+}
+
+.contenedor input{
+  margin: .5em .5em;
+  width: 300px;
+  height: 30px;
+  border-bottom: 1px solid #333;
+}
+
+.contenedor__idpaciente-select{
+  margin: .5em .5em;
+  width: 300px;
+  height: 30px;
+  border-bottom: 1px solid #333;
+}
+
+.contenedor input:hover{
+  border: 2px solid black;
+}
+
+.contenedor__boton{
+  background-color: #333;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 1em;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.contenedor__boton:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.form__error{
+  background-color: #FF9185;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.form__enviado{
+  background-color: #A0DEA7;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.contenedor__select, option{
+  background-color: rgb(51, 51, 51);
+  color: white;
+  padding: 7px;
+}
+
+.citas{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family:'Franklin Gothic Medium';
+}
+
+.citas__tabla{
+  justify-content: center;
+  table-layout: auto;
+  width: 80%;
+  border-collapse: collapse;
+  border: 2px solid #333;
+  text-align: center;
+}
+
+.citas__tabla th{
+  padding: .2em;
+  background-color: #333;
+}
+
+.citas__tabla td{
+  padding: .2em;
+  color: black;
+}
+
+.citas h1{
+  padding: 1em;
+  text-align: left;
+  width: 80%;
+  font-size: 1.5em;
+  color: black;
+  font-weight: bold;
+}
+
+.contenedor__rol{
+  visibility:hidden;
+}
+
+.modificar{
+  background-color: #A0DEA7;
+  font-weight:bolder;
+  text-decoration: underline;
+}
+
+.cita{
+  display: flex;
+  text-align: center;
+  font-size: 1.2em;
+  align-items: center;
+}
+
+.cita label{
+  text-align: left;
+  margin-right: .5em;
+}
+
+.eliminar{
+  background-color: #FF9185;
+  font-weight:bolder;
+  text-decoration: underline;
+}
+
+.eliminar__boton{
+  background-color: #FF9185;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 1em;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.eliminar__boton:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.contenedor__cita{
+  visibility:hidden;
+}
