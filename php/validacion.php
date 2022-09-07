@@ -20,7 +20,7 @@
         }else{
             header("location:../iniciarSesion.php?error=incorrecto");
         }
-    }else{  /*Validar datos para médico*/
+    }else if($tipo == "medico"){  /*Validar datos para médico*/
         $usuario = new Usuario();
         if($usuario->medicoExiste($id, $pass)){
             $sesion->setCurrentUser($id);
@@ -29,6 +29,8 @@
         }else{
             header("location:../iniciarSesion.php?error=incorrecto");
         }
+    }else{
+        header("location:../iniciarSesion.php?error=incorrecto");
     }
 
 ?>
